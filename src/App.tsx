@@ -8,7 +8,7 @@ function App() {
       <div className="h-screen flex items-center justify-center ">
         
         {/* reUseable button  */}
-         <Button variant={"outline"} className="w-[500px]">click</Button>
+         <Button>open modal</Button>
       </div>
     </Container>
   );
