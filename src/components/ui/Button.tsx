@@ -1,8 +1,21 @@
+import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
+import cn from "../../utils/cn";
 
-function Button({className}) {
+function Button({ className, outline }) {
   return (
-    <button className={`bg-green-500 ${className}`}>Button</button>
-  )
+    <button
+      className={cn(
+        "bg-purple-500, px-3 py-2 rounded-md",
+        {
+          "border border-purple-500 ": outline,
+        },
+        className
+      )}
+    >
+      Button
+    </button>
+  );
 }
 
-export default Button
+export default Button;
