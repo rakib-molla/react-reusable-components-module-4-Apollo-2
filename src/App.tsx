@@ -6,7 +6,9 @@ function App() {
   return (
     <Container>
       <div className="h-screen flex items-center justify-center ">
-        <Button variant={"outline"} className="w-[500px]" />
+        
+        {/* reUseable button  */}
+         <Button variant={"outline"} className="w-[500px]">click</Button>
       </div>
     </Container>
   );
