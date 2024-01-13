@@ -6,7 +6,7 @@ function App() {
   return (
     <Container>
       <div className="h-screen flex items-center justify-center ">
-        <Button outline={true}  />
+        <Button variant={"outline"} className="w-[500px]" />
       </div>
     </Container>
   );
