@@ -1,11 +1,12 @@
 // import MainLayout from "./components/layout/MainLayout";
+import Button from "./components/ui/Button";
 import Container from "./components/ui/Container";
 
 function App() {
   return (
     <Container>
       <div className="h-screen flex items-center justify-center ">
-        <button className="px-3 py-2">This is button</button>
+        <Button className={"bg-pink-500"} />
       </div>
     </Container>
   );
