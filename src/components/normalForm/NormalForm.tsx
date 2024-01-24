@@ -54,13 +54,30 @@ const normalForm = () => {
               {...register("name")}
             />
           </div>
+        
+        <div className="w-full ">
+          <label htmlFor="">Select Option</label>
+          <select name="" id="" >
+            <option value="">one </option>
+            <option value="">Two</option>
+            <option value="">Three</option>
+          </select>
         </div>
-        {/* <select name="" id="">
-          <option value="">one </option>
-          <option value="">Two</option>
-          <option value="">Three</option>
-        </select> */}
+        <div className="w-full ">
+            <label className="block" htmlFor="name">
+              Password
+            </label>
+            <textarea></textarea>
+          </div>
+        <div className="w-full ">
+            <label className="block" htmlFor="name">
+              Password
+            </label>
+            <input type="checkbox" className="border border-gray-400 rounded-md 
+   checked::bg-purple-500 focus:ring-1 focus:ring-purple-500"/>
+          </div>
         {/* <input type="submit" /> */}
+        </div>
       </form>
     </div>
   );
