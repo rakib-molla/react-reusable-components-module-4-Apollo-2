@@ -15,7 +15,10 @@ function App() {
         {/* reUseable button  */}
         <Button onClick={() => setModal((prev) => !prev)}>open modal</Button>
         <Modal isOpen={modal} onClose={handleOpenModalClose}>
-          <Modal.CloseButton />
+          <Modal.Header>
+            <h3> Title</h3>
+          <Modal.CloseButton></Modal.CloseButton>
+          </Modal.Header>
           <h1>this is modal </h1>
         </Modal>
       </div>
