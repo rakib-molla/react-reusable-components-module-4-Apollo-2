@@ -9,6 +9,11 @@ function App() {
   const handleOpenModalClose = () => {
     setModal((prev) => !prev);
   };
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    console.log('click');
+    setModal((prev) => !prev);
+  }
   return (
     <Container>
       <div className="h-screen w-full flex items-center justify-center ">
@@ -16,10 +21,13 @@ function App() {
         <Button onClick={() => setModal((prev) => !prev)}>open modal</Button>
         <Modal isOpen={modal} onClose={handleOpenModalClose}>
           <Modal.Header>
-            <h3> Title</h3>
-          <Modal.CloseButton></Modal.CloseButton>
+            <h1>This is modal title</h1>
+          <Modal.CloseButton/>
           </Modal.Header>
-          <h1>this is modal </h1>
+          <form onSubmit={handleSubmit}>
+            <input type="text" />
+            <button type="submit">Submit</button>
+          </form>
         </Modal>
       </div>
     </Container>
