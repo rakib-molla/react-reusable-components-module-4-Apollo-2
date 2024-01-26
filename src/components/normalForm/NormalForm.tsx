@@ -11,18 +11,15 @@ const normalForm = () => {
     <div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className={cn("border border-red-500 w-full mx-auto p-5", {
+        className={cn("border shadow-lg w-full mx-auto p-5", {
           "max-w-5xl": double,
           "max-w-md": !double,
         })}
       >
         <div
-          className={cn(
-            "border border-blue-500 grid grid-cols-1 justify-items-center  gap-5",
-            {
-              "md:grid-cols-2": double,
-            }
-          )}
+          className={cn(" grid grid-cols-1 justify-items-center  gap-5", {
+            "md:grid-cols-2": double,
+          })}
         >
           <div className="w-full">
             <label className="block" htmlFor="name">
@@ -54,29 +51,36 @@ const normalForm = () => {
               {...register("name")}
             />
           </div>
-        
-        <div className="w-full ">
-          <label htmlFor="">Select Option</label>
-          <select name="" id="" >
-            <option value="">one </option>
-            <option value="">Two</option>
-            <option value="">Three</option>
-          </select>
-        </div>
-        <div className="w-full ">
+
+          <div className="w-full ">
+            <label htmlFor="">Select Option</label>
+            <select name="" id="">
+              <option value="">one </option>
+              <option value="">Two</option>
+              <option value="">Three</option>
+            </select>
+          </div>
+          <div className="w-full ">
             <label className="block" htmlFor="name">
               Password
             </label>
             <textarea></textarea>
           </div>
-        <div className="w-full ">
+          <div className="w-full ">
             <label className="block" htmlFor="name">
               Password
             </label>
-            <input type="checkbox" className="border border-gray-400 rounded-md 
-   checked::bg-purple-500 focus:ring-1 focus:ring-purple-500"/>
+            <input
+              type="checkbox"
+              className="border border-gray-400 rounded-md 
+   checked::bg-purple-500 focus:ring-1 focus:ring-purple-500"
+            />
           </div>
-        {/* <input type="submit" /> */}
+          <div className=" w-full col-start-1  md:col-start-2 flex justify-end ">
+            <button type="submit" className="bg-blue-500 px-3 w-full md:w-fit py-2 rounded-md">
+              Submit
+            </button>
+          </div>
         </div>
       </form>
     </div>
