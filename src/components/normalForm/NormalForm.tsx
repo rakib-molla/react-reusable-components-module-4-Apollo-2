@@ -1,9 +1,18 @@
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 import cn from "../../utils/cn";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { SignUpSchema, TNormalForm } from "./validation";
 
 const normalForm = () => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<TNormalForm>({
+    resolver: zodResolver(SignUpSchema),
+  });
+
+  const onSubmit = (data: FieldValues) => {
     console.log(data);
   };
   const double = true;
@@ -30,43 +39,53 @@ const normalForm = () => {
               type="text"
               {...register("name")}
             />
+            {errors.name && (
+              <span className="text-red-500">{errors.name.message}</span>
+            )}
           </div>
           <div className="w-full">
-            <label className="block" htmlFor="name">
+            <label className="block" htmlFor="email">
               Email
             </label>
             <input
               className="w-full rounded-lg"
               type="text"
-              {...register("name")}
+              {...register("email")}
             />
+            {errors.email && (
+              <span className="text-red-500">{errors.email.message}</span>
+            )}
           </div>
           <div className="w-full">
-            <label className="block" htmlFor="name">
+            <label className="block" htmlFor="password">
               Password
             </label>
             <input
               className="w-full rounded-lg"
-              type="text"
-              {...register("name")}
+              type="password"
+              {...register("password")}
             />
+            {errors.password && (
+              <span className="text-red-500">{errors.password.message}</span>
+            )}
           </div>
 
-          <div className="w-full ">
+          {/* <div className="w-full ">
             <label htmlFor="">Select Option</label>
             <select name="" id="">
               <option value="">one </option>
               <option value="">Two</option>
               <option value="">Three</option>
             </select>
-          </div>
-          <div className="w-full ">
+          </div> */}
+
+          {/* <div className="w-full ">
             <label className="block" htmlFor="name">
               Password
             </label>
             <textarea></textarea>
-          </div>
-          <div className="w-full ">
+          </div> */}
+          {/* <div className="w-full ">
             <label className="block" htmlFor="name">
               Password
             </label>
@@ -75,9 +94,12 @@ const normalForm = () => {
               className="border border-gray-400 rounded-md 
    checked::bg-purple-500 focus:ring-1 focus:ring-purple-500"
             />
-          </div>
+          </div> */}
           <div className=" w-full col-start-1  md:col-start-2 flex justify-end ">
-            <button type="submit" className="bg-blue-500 px-3 w-full md:w-fit py-2 rounded-md">
+            <button
+              type="submit"
+              className="bg-blue-500 px-3 w-full md:w-fit py-2 rounded-md"
+            >
               Submit
             </button>
           </div>
