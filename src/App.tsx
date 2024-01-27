@@ -63,16 +63,16 @@ function App() {
             type="checkbox"
             errors={errors}
           />
-          <div className="flex gap-5  ">
+          <div className="flex gap-5 items-start justify-start">
             <Input
               register={register("gender")}
-              label="Gender"
+              label="Male"
               type="radio"
               errors={errors}
             />
             <Input
               register={register("gender")}
-              label="Gender"
+              label="Female"
               type="radio"
               errors={errors}
             />
